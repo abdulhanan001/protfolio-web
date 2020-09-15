@@ -1,0 +1,269 @@
+{% extends 'web/basic.html'%}
+ {%load static%}
+{% block title %} About {%endblock%}
+
+
+{% block css %}
+
+
+.container1{
+	position: relative;
+        width: 900px;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-around;
+        margin-top :50px;
+
+}
+
+.container1 .card {
+	position: relative;
+	width: 250px;
+	background: linear-gradient(0deg,#1b1b1b,#222,#1b1b1b);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        border-radius: 4px;
+        text-align: center;
+        overflow: hidden;
+        transition: 0.5s;
+}
+.container1 .card:hover{
+	transform: translateY(-10px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, .5)
+
+}
+.container1 .card::before{
+	content:'' ;
+	position: absolute;
+	top: 0;
+	left:-50%;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, .03);
+	pointer-events: none;
+	z-index: 1;
+
+}
+.percent {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        box-shadow: inset 0 0 50px #000;
+        background: #222;
+        z-index: 1000;
+}
+.percent .number {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+
+}
+.percent .number h2
+{
+    color: #777;
+    font-weight: 600;
+    font-size: 60px;
+    transition: 0.5s;
+}
+.card:hover .percent .number h2
+{
+        color: #fff;
+        font-size: 90px;
+
+}
+.percent .number h2 span
+{
+	font-size: 24px;
+	color: #777;
+        transition: 0.5s;
+
+}
+.card:hover .box.percent.number h2 span
+{
+	color: #fff;
+
+}
+.text {
+	position: relative;
+	color: #777;
+	margin-top: 20px;
+	font-weight: 700;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+.card:hover .text {
+	color: #fff;
+
+}
+svg
+{
+position: relative;
+width: 150px;
+height: 150px;
+z-index: 1000;
+
+}
+svg circle{
+	width: 100%;
+	height: 100%;
+	fill: none;
+	stroke: #191919;
+	stroke-width: 10;
+        stroke-linecap: round;
+        transform: translate(5px, 5px);
+
+}
+svg circle:nth-child(2)
+{
+
+	stroke-dasharray: 440;
+        stroke-dashoffset: 440;
+
+ }
+
+
+.card:nth-child(1) svg circle:nth-child(2)
+{
+	stroke-dashoffset: calc(440 - (440*90) /100);
+        stroke:  #00ff43;
+}
+.card:nth-child(2) svg circle:nth-child(2)
+{	stroke-dashoffset: calc(440 - (440*60) /100);
+	stroke: #00a1ff;
+}
+.card:nth-child(3) svg circle:nth-child(2)
+{
+	stroke-dashoffset: calc(440 - (440*80) /100);
+	stroke: #ff04f7;
+}
+
+
+@media only screen and (max-width: 1080px) {
+	header
+	{
+		
+padding: 20px 50px;
+	}
+.banner {
+	padding: 100px 50px 150px;
+}
+.banner h2 {
+	font-size: 1.8em;
+
+}
+
+.banner.active {
+	transform: translateX(-250px);
+}
+#navigation {
+	width:  250px;
+}
+#navigation ul li a {
+	font-size: 1.5em;
+
+	margin : 5px 0;
+}
+.sci
+{
+	position: absolute;
+	bottom: 50px;
+	right: initial;
+	flex-direction: row;
+}
+.sci li a {
+	margin: initial;
+	margin-right: 10px;
+}
+
+.container1{
+	position: relative;
+    width: 636px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-direction: column;
+}
+.container1 .card{
+	height: 250px;
+	width: 174px;
+	font-size: 0.7rem;
+
+}
+.fot .container {
+	grid-template-columns: repeat(auto-fill,minmax(47%, 200px));
+
+
+}
+}
+
+{%endblock%}
+
+
+
+{% block body %}
+<div class="content">
+    <h2> <span>Welcome To My Website</span></h2>
+    I  have certain Skills and Can develop for you Django website and also deploy on heroko
+    and also Machine Learning model
+</div>
+
+<div class="container1">
+        <div class="card">
+            <div class="box">
+                <div class="percent">
+                    <svg>
+                        <circle cx="70" cy="70" r ="70"></circle>
+                         <circle cx="70" cy="70" r ="70"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>90<span>%</span></h2>
+                    </div>
+                </div>
+                <h2 class="text">python</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="box">
+                <div class="percent">
+                    <svg>
+                        <circle cx="70" cy="70" r ="70"></circle>
+                         <circle cx="70" cy="70" r ="70"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>80<span>%</span></h2>
+                    </div>
+                </div>
+                <h2 class="text">Django</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="box">
+                <div class="percent">
+                    <svg>
+                        <circle cx="70" cy="70" r ="70"></circle>
+                         <circle cx="70" cy="70" r ="70"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>80<span>%</span></h2>
+                    </div>
+                </div>
+                <h2 class="text">FrontEnd </h2>
+            </div>
+        </div>
+
+    </div>
+
+{%endblock%}
+
+

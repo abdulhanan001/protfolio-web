@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {%load static%}
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   <link rel="stylesheet" href="{%static 'web/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+<style>
+        .banner{
+            background: url(/media/imgs/background.jpg)no-repeat center center/cover;
+            flex-direction :column;
+
+
+            }
+    {% block css %} {%endblock%}
+</style>
+
+</head>
+<body>
+    <section class="banner active" id="sec">
+        <header>
+             <a href="/" class="logo"><i class="fa fa-code fa-2x" style="color:#b93939" aria-hidden="true"></i></a>
+            <div id="toggle" onclick="toggle()"></div>
+        </header>
+        {% block body %} {%endblock%}
+        <ul class="sci">
+            <li> <a href="https://www.facebook.com/" target="_blank" ><img src=" /media/imgs/facebook.png"></a></li>
+            <li> <a href="https://www.facebook.com/" target="_blank" ><img src=" /media/imgs/twitter.png"></a></li>
+            <li> <a href="https://www.facebook.com/" target="_blank" ><img src=" /media/imgs/linkedin.png"></a></li>
+
+        </ul>
+    </section>
+    <div id="navigation">
+        <ul>
+            <li><a href="/">Home</a> </li>
+            <li><a href="/about">About</a> </li>
+            <li><a href="/services">Services</a> </li>
+            <li><a href="/contact">Contact</a> </li>
+        </ul>
+    </div>
+    <footer class="fot">
+        <div class="container">
+            <div class="box">
+                <div class="content">
+                    <img src=" /media/imgs/contact.png " >
+                    <p>Contact With Us for  machine learning projects </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="content">
+                    <img src=' /media/imgs/laptop.png'>
+                    <p>Contact With Us for Django web Development</p>
+
+                </div>
+            </div>
+            <div class="box">
+                <div class="content">
+                    <img src=' /media/imgs/phone.png'>
+                    <p>Contact With Us <h3>AbdulHanan</h3> <br> +923103692529 </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script >
+
+        function toggle () {
+            var sec = document.getElementById('sec');
+            var nav = document.getElementById('navigation');
+            sec.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+        {% block js%}  {%endblock%}
+    </script>
+</body>
+</html>
